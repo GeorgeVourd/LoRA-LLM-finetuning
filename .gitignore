@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model files and cache (DO NOT include in submission)
+*.bin
+*.safetensors
+*.msgpack
+*.h5
+*.onnx
+*.pb
+
+# HuggingFace cache
+.cache/
+cache/
+**/cache/
+**/.cache/
+
+# Training outputs (include only what's specified in submission requirements)
+milestone2_finetuning/results/
+milestone2_finetuning/logs/
+milestone2_finetuning/checkpoint*/
+milestone2_finetuning/runs/
+
+# Dataset files (large)
+milestone2_finetuning/subset_data/
+milestone2_finetuning/formatted_subset_data/
+milestone1_exploration/data/
+
+# Docker
+*.tar
+*.tar.gz
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+tmp/

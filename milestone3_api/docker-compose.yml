@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  qwen-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qwen-finetuned-api
+    ports:
+      - "8000:8000"
+    environment:
+      - BASE_MODEL_NAME=Qwen/Qwen3-0.6B-Base
+      - ADAPTER_PATH=/app/adapters
+      - PORT=8000
+      - HOST=0.0.0.0
+      # Uncomment to use GPU (requires nvidia-docker)
+      # - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      # Optional: Mount adapters from host if not copied during build
+      # - ../milestone2_finetuning/adapters:/app/adapters:ro
+      # Optional: Mount cache for HuggingFace models
+      - ~/.cache/huggingface:/root/.cache/huggingface:rw
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    # Uncomment to use GPU (requires nvidia-docker)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    networks:
+      - qwen-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  qwen-network:
+    driver: bridge

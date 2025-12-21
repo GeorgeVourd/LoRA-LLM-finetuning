@@ -1,0 +1,19 @@
+# API Service Requirements for Milestone 3
+
+# FastAPI and server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+
+# ML/AI libraries
+torch>=2.1.0
+transformers>=4.37.0
+peft>=0.8.0
+accelerate>=0.26.0
+
+# Quantization (optional, for GPU optimization)
+bitsandbytes>=0.42.0
+
+# Additional utilities
+numpy>=1.24.0
+scipy>=1.11.0

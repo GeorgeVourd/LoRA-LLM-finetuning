@@ -1,0 +1,17 @@
+Training Log
+================================================================================
+
+model_name: Qwen/Qwen3-0.6B-Base
+training_duration_seconds: 9.720717
+final_training_loss: 1.5358302593231201
+num_epochs: 1
+batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 2e-05
+lora_rank: 32
+lora_alpha: 64
+num_training_samples: 100
+trainable_parameters: 20185088
+total_parameters: 616235008
+trainable_percentage: 3.275550356269276
+timestamp: 2025-12-21T02:11:10.289123
